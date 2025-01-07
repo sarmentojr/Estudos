@@ -1,0 +1,268 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM45yDYHPL3k3wEAdYB4Vhc",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/sarmentojr/Estudos/blob/main/Exerc%C3%ADcio%20extra%20Condicionais\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Exercícios de Condicionais\n",
+        "\n",
+        "Seu primeiro desafio é desenvolver um programa para um depósito de\n",
+        "bebidas que valide venda de bebidas para maiores de idade (maior ou\n",
+        "igual 18 anos) no mercado, o programa deve receber do usuário os\n",
+        "valores do nome e ano que ele nasceu e retornar se ele pode comprar\n",
+        "bebidas."
+      ],
+      "metadata": {
+        "id": "YmKz8eAVGScN"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 14,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "A7yQV9u4F3fN",
+        "outputId": "83425ef1-99d1-4da6-90f0-d017327f11c3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite seu nome: Nicholas\n",
+            "Digite seu ano de nascimento: 2021\n",
+            "Nicholas, você não pode comprar bebidas alcoólicas.\n"
+          ]
+        }
+      ],
+      "source": [
+        "nomeCliente = input(\"Digite seu nome: \")\n",
+        "anoNascimento = int(input(\"Digite seu ano de nascimento: \"))\n",
+        "\n",
+        "maiorIdade = (2025 - anoNascimento) >= 18\n",
+        "\n",
+        "if maiorIdade:\n",
+        "    print(f\"{nomeCliente}, você pode comprar bebidas alcoólicas.\")\n",
+        "else:\n",
+        "    print(f\"{nomeCliente}, você não pode comprar bebidas alcoólicas.\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Esse bimestre na faculdade você precisa tirar nota 8 de média para\n",
+        "passar na matéria, desenvolva um script que leia a nota de suas\n",
+        "últimas 3 provas, tire a média delas e verifique se você passou.\n"
+      ],
+      "metadata": {
+        "id": "6Pi-mtznJ4cG"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nota1 = float(input(\"Digite a nota da primeira prova: \"))\n",
+        "nota2 = float(input(\"Digite a nota da segunda prova: \"))\n",
+        "nota3 = float(input(\"Digite a nota da terceira prova: \"))\n",
+        "\n",
+        "media = (nota1 + nota2 + nota3) / 3\n",
+        "\n",
+        "if media >= 8:\n",
+        "    print(f\"Parabéns! Você passou com média {media:.2f}.\")\n",
+        "else:\n",
+        "    print(f\"Infelizmente, você não passou com média {media:.2f}.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FYFiFnp1KDox",
+        "outputId": "cd871462-a058-4239-f3a1-1ac5f0602a45"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite a nota da primeira prova: 8\n",
+            "Digite a nota da segunda prova: 9\n",
+            "Digite a nota da terceira prova: 3\n",
+            "Infelizmente, você não passou com média 6.67.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "A fisioterapeuta que você vai gosta muito de brincar com números, e\n",
+        "pediu para você criar um sistema que verifique se a altura inserida é\n",
+        "par ou impar.\n"
+      ],
+      "metadata": {
+        "id": "B4-fqa8dKVUg"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "altura = int(input(\"Digite sua altura em centímetros: \"))\n",
+        "\n",
+        "if altura % 2 == 0:\n",
+        "    print(\"Sua altura é par.\")\n",
+        "else:\n",
+        "    print(\"Sua altura é ímpar.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "r3caTR5lKZgQ",
+        "outputId": "c75b3c05-93db-496b-8749-2c6a31abeb7d"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite sua altura em centímetros: 171\n",
+            "Sua altura é ímpar.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Faça um script que você coloque a quantidade de dias e descubra em\n",
+        "qual trimestre esse dia está no ano.\n"
+      ],
+      "metadata": {
+        "id": "JaPdDvjXKnXr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "quantidadeDias = int(input(\"Digite a quantidade de dias: \"))\n",
+        "\n",
+        "diasPorTrimestre = 365 / 4\n",
+        "if( quantidadeDias >  diasPorTrimestre * 3 ):\n",
+        "  print(\"Esta data está no 4 trimeste\")\n",
+        "elif( quantidadeDias >  diasPorTrimestre * 2 ):\n",
+        "  print(\"Esta data está no 3 trimeste\")\n",
+        "elif( quantidadeDias >  diasPorTrimestre * 1 ):\n",
+        "  print(\"Esta data está no 2 trimeste\")\n",
+        "else:\n",
+        "  print(\"Esta data está no 1 trimeste\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EvXd5pjqK5Sg",
+        "outputId": "d9aa8962-9831-4011-b109-67a5aedab510"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite a quantidade de dias: 256\n",
+            "Esta data está no 3 trimeste\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Desenvolva um sistema que leia 3 números e diga qual é o maior (se\n",
+        "houver empate, exiba os empatados).\n"
+      ],
+      "metadata": {
+        "id": "GTRPdlscK6Mb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num1 = int(input(\"Digite o primeiro número: \"))\n",
+        "num2 = int(input(\"Digite o segundo número: \"))\n",
+        "num3 = int(input(\"Digite o terceiro número: \"))\n",
+        "\n",
+        "if num1 > num2 and num1 > num3:\n",
+        "    print(f\"{num1} é o maior número.\")\n",
+        "elif num2 > num1 and num2 > num3:\n",
+        "    print(f\"{num2} é o maior número.\")\n",
+        "elif num3 > num1 and num3 > num2:\n",
+        "    print(f\"{num3} é o maior número.\")\n",
+        "else:\n",
+        "  print(\"O empate foi entre\")\n",
+        "\n",
+        "print('Houve um emprate!')\n",
+        "\n",
+        "if (num1 == num2):\n",
+        "  print(f\"EMPATE!! A({num1}) e B({num2})\")\n",
+        "if (num2 == num3):\n",
+        "  print(f\"EMPATE!! B({num2}) e C({num3})\")\n",
+        "if (num1 == num3):\n",
+        "  print(f\"EMPATE!! A({num1}) e C({num3})\")\n",
+        "\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DKJasop6K9v4",
+        "outputId": "40f3113b-49f2-4dd8-feab-a9c0bd77bb31"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o primeiro número: 2\n",
+            "Digite o segundo número: 6\n",
+            "Digite o terceiro número: 2\n",
+            "6 é o maior número.\n",
+            "Houve um emprate!\n",
+            "EMPATE!! A(2) e C(2)\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
